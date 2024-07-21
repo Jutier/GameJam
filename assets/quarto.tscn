@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0vhw8e23mm54"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8mxrw"]
+b = Vector2(-2.63449, 127.973)
+
+[node name="paredes" type="StaticBody2D"]
+
+[node name="parede esquerda" type="CollisionShape2D" parent="."]
+rotation = -0.0205834
+shape = SubResource("SegmentShape2D_8mxrw")
+
+[node name="parede baixo" type="CollisionShape2D" parent="."]
+position = Vector2(0, 128)
+rotation = -1.5941
+shape = SubResource("SegmentShape2D_8mxrw")
+
+[node name="parede cima" type="CollisionShape2D" parent="."]
+rotation = -1.58727
+shape = SubResource("SegmentShape2D_8mxrw")
+
+[node name="parede direta" type="CollisionShape2D" parent="."]
+position = Vector2(128, 0)
+rotation = -0.0205834
+shape = SubResource("SegmentShape2D_8mxrw")
