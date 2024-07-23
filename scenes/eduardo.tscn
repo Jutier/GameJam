@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://kaqma0xsp7vj"]
+
+[ext_resource type="Texture2D" uid="uid://wys7vti0snxj" path="res://textures/player/sprite_piscando.png" id="2_ft2eo"]
+[ext_resource type="Script" path="res://scripts/eduardo.gd" id="2_urehj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qno4y"]
+atlas = ExtResource("2_ft2eo")
+region = Rect2(0, 0, 511, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dntp7"]
+atlas = ExtResource("2_ft2eo")
+region = Rect2(515, 0, 511, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtm7w"]
+atlas = ExtResource("2_ft2eo")
+region = Rect2(0, 1416, 514, 472)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j23k"]
+atlas = ExtResource("2_ft2eo")
+region = Rect2(514, 1416, 514, 472)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w38um"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"crawl_down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"crawl_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"crawl_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"crawl_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_qno4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dntp7")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_xtm7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j23k")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 2.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"stun",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wljpn"]
+radius = 3.0
+height = 10.0
+
+[node name="eduardo" type="CharacterBody2D"]
+script = ExtResource("2_urehj")
+
+[node name="animação" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, -8)
+scale = Vector2(0.0996703, 0.0996703)
+sprite_frames = SubResource("SpriteFrames_w38um")
+animation = &"idle_down"
+autoplay = "idle_down"
+
+[node name="caixa" type="CollisionShape2D" parent="."]
+position = Vector2(24, -3)
+rotation = -1.55606
+shape = SubResource("CapsuleShape2D_wljpn")

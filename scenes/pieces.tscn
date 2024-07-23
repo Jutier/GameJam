@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl8xouoqtrx27"]
+
+[ext_resource type="Script" path="res://scripts/pieces.gd" id="1_uprh7"]
+
+[node name="Sprite2D" type="Sprite2D"]
+script = ExtResource("1_uprh7")
