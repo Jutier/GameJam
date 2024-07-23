@@ -3,21 +3,21 @@
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8mxrw"]
 b = Vector2(0, 300)
 
-[node name="paredes" type="StaticBody2D"]
+[node name="walls" type="StaticBody2D"]
 
-[node name="parede esquerda" type="CollisionShape2D" parent="."]
+[node name="left wall" type="CollisionShape2D" parent="."]
 shape = SubResource("SegmentShape2D_8mxrw")
 
-[node name="parede baixo" type="CollisionShape2D" parent="."]
+[node name="bottom wall" type="CollisionShape2D" parent="."]
 position = Vector2(0, 300)
 rotation = -1.5708
 shape = SubResource("SegmentShape2D_8mxrw")
 
-[node name="parede cima" type="CollisionShape2D" parent="."]
+[node name="top wall" type="CollisionShape2D" parent="."]
 top_level = true
 rotation = -1.5708
 shape = SubResource("SegmentShape2D_8mxrw")
 
-[node name="parede direta" type="CollisionShape2D" parent="."]
+[node name="right wall" type="CollisionShape2D" parent="."]
 position = Vector2(300, 0)
 shape = SubResource("SegmentShape2D_8mxrw")
