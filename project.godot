@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GameJam"
+config/name="It IS Rocket Science"
 run/main_scene="res://assets/root.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
