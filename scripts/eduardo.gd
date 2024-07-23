@@ -1,90 +1,91 @@
 extends CharacterBody2D
 
-const VELOCIDADE_NORMAL = 50
-const VELOCIDADE_CORRENDO = 150
-const TEMPO_CAIDO = 120
-const ESTAMINA_MAXIMA = 300
+const CRAWL_SPEED = 50
+const WALK_SPEED = 150
+const STUN_DURATION = 120
+const MAX_STAMINA = 300
 
-var estamina = ESTAMINA_MAXIMA
-var caido = TEMPO_CAIDO
-var sentido = [0, 1]
+var stamina = MAX_STAMINA
+var tired = STUN_DURATION # for lack of a better name, this will have to suffice
+var direction = [0, 1] # it needs to be out here, it must not update every frame
  
-@onready var animacao = get_node("animacao")
+@onready var node_animation = get_node("animation")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
-	var shiftPressionado = Input.is_key_pressed(KEY_SHIFT)
-	var entrada = pega_movimento_x_y()
+	var shiftPressed = Input.is_key_pressed(KEY_SHIFT)
+	var xy_input = get_input_xy()
 
 
-	if estamina < ESTAMINA_MAXIMA and not (shiftPressionado or caido < TEMPO_CAIDO):
-		estamina += 1
+	if stamina < MAX_STAMINA and not (shiftPressed or tired < STUN_DURATION):
+		# recovers stamina if not down or running
+		stamina += 1
 	
-	if entrada != Vector2.ZERO and caido == TEMPO_CAIDO:
-		sentido = [velocity.x, velocity.y]
-		
-		if shiftPressionado:
-			animacao.play("idle_left")
-			if estamina > 0:
-				corre(entrada)
+	if xy_input != Vector2.ZERO and tired == STUN_DURATION:
+		if velocity.x != 0 or velocity.y != 0: # more explicit than .lenght()
+			# it just check if velocity is REALLY not zero, somehow the first if was not enough
+			direction = [velocity.x, velocity.y]
+
+		if shiftPressed:
+			if stamina > 0:
+				walk(xy_input)
 			else:
-				cansado()
+				stun()
 		else:
-			animacao.play("idle_right")
-			anda(entrada)
+			crawl(xy_input)
 			
 	else:
-		if caido < TEMPO_CAIDO:
-			caido += 1
+		if tired < STUN_DURATION:
+			# recovers from stun
+			tired += 1
 			
-		#define velocidade dos dois eixos como 0 caso nao haja input 
-		velocity.x = move_toward(velocity.x, 0, VELOCIDADE_NORMAL)
-		velocity.y = move_toward(velocity.y, 0, VELOCIDADE_NORMAL)
+		# set speed to 0 is there is no input
+		velocity.x = move_toward(velocity.x, 0, CRAWL_SPEED)
+		velocity.y = move_toward(velocity.y, 0, CRAWL_SPEED)
 		
-	anima(velocity.length())
+	animate(velocity.length())
 	move_and_slide()
 
-func corre(entrada):
-	velocity = velocity.move_toward(entrada * VELOCIDADE_CORRENDO, VELOCIDADE_CORRENDO)
-	estamina -= 1
+func walk(xy_input):
+	velocity = velocity.move_toward(xy_input * WALK_SPEED, WALK_SPEED)
+	stamina -= 1
 
-func anda(entrada):
-	velocity = velocity.move_toward(entrada * VELOCIDADE_NORMAL, VELOCIDADE_NORMAL)
+func crawl(xy_input):
+	velocity = velocity.move_toward(xy_input * CRAWL_SPEED, CRAWL_SPEED)
 
-func cansado():
-	caido = 0
+func stun():
+	tired = 0
 
-func pega_movimento_x_y():
-	var entrada = Vector2.ZERO
-	entrada.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	entrada.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	return entrada.normalized()
+func get_input_xy():
+	var xy_input = Vector2.ZERO
+	xy_input.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	xy_input.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	return xy_input.normalized()
 
-func anima(modulo_velocidade):
-	# CONFIA EM MIM, DEIXA ASSIM, TA PERFEITO
-	# as animações eu só testei, ainda n preparei, a juliana ainda vai terminar algumas coisas
-	var X = sentido[0]
-	var Y = sentido[1]
-	var linha = ""
+func animate(speed_abs):
+	# not the most elegant solution, but sure a fun one
+	var X = direction[0]
+	var Y = direction[1]
+	var label = ""
 	
-	if modulo_velocidade == VELOCIDADE_NORMAL:
-		linha += "crawl"
-	elif modulo_velocidade == VELOCIDADE_CORRENDO:
-		linha += "walk"
+	if speed_abs == CRAWL_SPEED:
+		label += "crawl"
+	elif speed_abs == WALK_SPEED:
+		label += "walk"
 	else:
-		linha += "idle"
+		label += "idle"
 	
 	if X == 0:
 		if Y < 0:
-			linha += "_up"
+			label += "_up"
 		else:
-			linha += "_down"
+			label += "_down"
 	elif X < 0:
-		linha += "_right"
+		label += "_right"
 	else:
-		linha += "_left"
+		label += "_left"
 
-	animacao.play(linha)
+	node_animation.play(label)
 
-func morre():
+func dead():
 	queue_free()
