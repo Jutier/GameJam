@@ -8,5 +8,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	get_parent().get_node('Debug Label').text = var_to_str(get_parent().get_node("eduardo").direction)
+	self.text = var_to_str(get_parent().get_node("eduardo").stamina)
+	self.text += '\n'
+	self.text += var_to_str(get_parent().get_node("eduardo").tired)
+	self.text += '\n'
+	self.text += var_to_str(get_parent().get_node("item").pickedUp)
+	#get_parent().get_node('Debug Label').text = var_to_str(get_parent().get_node("item").player_inside)
+	
 
