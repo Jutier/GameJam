@@ -8,16 +8,19 @@ const MAX_STAMINA = 300
 var stamina = MAX_STAMINA
 var tired = STUN_DURATION # for lack of a better name, this will have to suffice
 var direction = [0, 1] # it needs to be out here, it must not update every frame
+
+#var free = true # must be a way to see if the player is able to use actions (not tired, not holding, etc)
+# should be one for holding and one for wearing
  
 @onready var node_animation = get_node("animation")
 
 func _physics_process(_delta):
 	
-	var shiftPressed = Input.is_key_pressed(KEY_SHIFT)
+	var sprintPressed = Input.is_action_pressed("sprint")
 	var xy_input = get_input_xy()
 
 
-	if stamina < MAX_STAMINA and not (shiftPressed or tired < STUN_DURATION):
+	if stamina < MAX_STAMINA and not (sprintPressed or tired < STUN_DURATION):
 		# recovers stamina if not down or running
 		stamina += 1
 	
@@ -26,7 +29,7 @@ func _physics_process(_delta):
 			# it just check if velocity is REALLY not zero, somehow the first if was not enough
 			direction = [velocity.x, velocity.y]
 
-		if shiftPressed:
+		if sprintPressed:
 			if stamina > 0:
 				walk(xy_input)
 			else:
@@ -54,6 +57,8 @@ func crawl(xy_input):
 	velocity = velocity.move_toward(xy_input * CRAWL_SPEED, CRAWL_SPEED)
 
 func stun():
+	dropItem()
+	#free = false
 	tired = 0
 
 func get_input_xy():
@@ -86,6 +91,12 @@ func animate(speed_abs):
 		label += "_left"
 
 	node_animation.play(label)
+
+func interact(item):
+	pass
+
+func dropItem():
+	pass
 
 func dead():
 	queue_free()

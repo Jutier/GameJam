@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl8xouoqtrx27"]
+[gd_scene load_steps=6 format=3 uid="uid://cl8xouoqtrx27"]
 
 [ext_resource type="Texture2D" uid="uid://nys78ifb214i" path="res://textures/references/Objects/Egg_item.png" id="1_wjm8e"]
-[ext_resource type="PackedScene" uid="uid://fyqqi88cxwnf" path="res://scenes/interactionZone.tscn" id="2_3ajuw"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="2_gwf7r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1iu1n"]
 atlas = ExtResource("1_wjm8e")
@@ -18,7 +18,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pxrdt"]
+radius = 8.0
+
 [node name="item" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_m4lbr")
+script = ExtResource("2_gwf7r")
 
-[node name="interactionZone" parent="." instance=ExtResource("2_3ajuw")]
+[node name="interactionZone" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="interactionShape" type="CollisionShape2D" parent="interactionZone"]
+shape = SubResource("CircleShape2D_pxrdt")
+
+[connection signal="body_entered" from="interactionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="interactionZone" to="." method="_on_interaction_zone_body_exited"]
