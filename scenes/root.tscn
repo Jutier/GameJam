@@ -20,9 +20,9 @@ y_sort_enabled = true
 position = Vector2(125, 202)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-position = Vector2(150, 150)
-zoom = Vector2(1.94, 1.94)
+position = Vector2(154, 161)
+enabled = false
+zoom = Vector2(1.5, 1.5)
 
 [node name="walls" parent="." instance=ExtResource("2_ejbhb")]
 
