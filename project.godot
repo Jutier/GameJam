@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="It IS Rocket Science"
-run/main_scene="res://scenes/root.tscn"
+run/main_scene="res://scenes/mainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+LoadingScene="*res://scenes/loading.tscn"
 
 [display]
 
