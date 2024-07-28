@@ -235,7 +235,7 @@ rotation = -1.55606
 shape = SubResource("CapsuleShape2D_wljpn")
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.0996703, 0.0996703)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_w38um")
 animation = &"idle_down"
 autoplay = "idle_down"

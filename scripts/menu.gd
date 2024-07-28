@@ -17,8 +17,7 @@ func _process(delta):
 
 
 func _on_start_button_pressed():
-	print('hi')
-	LoadingScene.transition("res://scenes/root.tscn")
+	LoadingScene.transition("res://scenes/level.tscn")
 
 
 func _on_settings_button_pressed():
