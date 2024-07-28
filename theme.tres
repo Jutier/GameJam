@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://chdltnsrcvssn"]
+
+[ext_resource type="Texture2D" uid="uid://bcqlopfo0fdlc" path="res://textures/GUI by Mounir Tohami.png" id="1_3i7rv"]
+[ext_resource type="FontFile" uid="uid://bfqbsabrwdyw2" path="res://fonts/Jua-Regular.ttf" id="1_xylri"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ntl8m"]
+texture = ExtResource("1_3i7rv")
+region_rect = Rect2(145, 113, 46, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c4phq"]
+texture = ExtResource("1_3i7rv")
+region_rect = Rect2(145, 98, 46, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4fcj5"]
+texture = ExtResource("1_3i7rv")
+region_rect = Rect2(145, 98, 46, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sfg2v"]
+texture = ExtResource("1_3i7rv")
+texture_margin_top = 1.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(145, 81, 46, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cyxu3"]
+texture = ExtResource("1_3i7rv")
+region_rect = Rect2(145, 98, 46, 13)
+modulate_color = Color(0.509804, 0.658824, 0.890196, 1)
+
+[resource]
+default_font = ExtResource("1_xylri")
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_xylri")
+Button/styles/disabled = SubResource("StyleBoxTexture_ntl8m")
+Button/styles/focus = SubResource("StyleBoxTexture_c4phq")
+Button/styles/hover = SubResource("StyleBoxTexture_4fcj5")
+Button/styles/normal = SubResource("StyleBoxTexture_sfg2v")
+Button/styles/pressed = SubResource("StyleBoxTexture_cyxu3")
+Label/font_sizes/font_size = 22

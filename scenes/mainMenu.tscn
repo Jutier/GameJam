@@ -1,7 +1,65 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxr1bhj84gbkj"]
+[gd_scene load_steps=11 format=3 uid="uid://cxr1bhj84gbkj"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_01cj4"]
-[ext_resource type="Texture2D" uid="uid://ct4ric0x3i4tp" path="res://icon.svg" id="2_xgwyb"]
+[ext_resource type="Theme" uid="uid://chdltnsrcvssn" path="res://theme.tres" id="1_ev2k0"]
+[ext_resource type="AudioStream" uid="uid://j10gxgh3ospw" path="res://sounds/Music.wav" id="2_brl24"]
+[ext_resource type="Texture2D" uid="uid://nsrubn776nqn" path="res://textures/Scale by Mounir Tohami.png" id="5_7ev1c"]
+[ext_resource type="Texture2D" uid="uid://bxgwaf7vh3iej" path="res://textures/Moon by RusKom.png" id="5_yghfo"]
+[ext_resource type="Texture2D" uid="uid://djqofpovtop62" path="res://textures/speech bubble.png" id="7_3ucsi"]
+[ext_resource type="Texture2D" uid="uid://235sxpysxshk" path="res://textures/player/HD Dudu.png" id="7_mtr6e"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bjtd"]
+texture = ExtResource("5_yghfo")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g4l0k"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(32, 16)
+sources/1 = SubResource("TileSetAtlasSource_2bjtd")
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ocko"]
+line_spacing = 1.0
+font_size = 22
+font_color = Color(0, 0, 0, 1)
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -10,42 +68,98 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ev2k0")
 script = ExtResource("1_01cj4")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_brl24")
+autoplay = true
+
+[node name="background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_xgwyb")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="button box" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.0
-offset_top = -54.0
-offset_right = 74.0
-offset_bottom = 54.0
+offset_left = -136.0
+offset_top = -143.0
+offset_right = 136.0
+offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+texture = ExtResource("5_7ev1c")
 
-[node name="start button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="start button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 158.0
+offset_right = 584.0
+offset_bottom = 206.0
 text = "New Game"
 
-[node name="settings button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="settings button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 214.0
+offset_right = 584.0
+offset_bottom = 262.0
 text = "Settings"
 
-[node name="credits button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="credits button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 270.0
+offset_right = 584.0
+offset_bottom = 318.0
+text = "Credits
+"
 
-[connection signal="pressed" from="VBoxContainer/start button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/settings button" to="." method="_on_settings_button_pressed"]
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(504, 544)
+rotation = -0.511381
+scale = Vector2(2, 2)
+skew = 0.31765
+tile_set = SubResource("TileSet_g4l0k")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65523, 131073, 0, -65524, 65537, 0, -65525, 1, 0, -65526, 65537, 0, -65527, 65537, 0, -65528, 65537, 0, -65529, 131073, 0, -65530, 1, 0, -65531, 131073, 0, -65532, 65537, 0, -65533, 65537, 0, -65534, 65537, 0, -65535, 262145, 0, -65536, 131073, 0, -1, 131073, 0, -2, 65537, 0, -3, 65537, 0, -4, 65537, 0, -5, 1, 0, -6, 65537, 0, -7, 65537, 0, -8, 1, 0, -9, 65537, 0, -10, 262145, 0, -11, 65537, 0, -12, 65537, 0, -13, 1, 0, -14, 65537, 0, -15, 65537, 0, -16, 131073, 0, -17, 65537, 0, -18, 1, 0, 65520, 393217, 0, 65521, 393217, 0, 65522, 393217, 0, 65523, 393217, 0, 65524, 393217, 0, 65525, 393217, 0, 65526, 393217, 0, 65527, 327681, 0, 65528, 393217, 0, 65529, 327681, 0, 65530, 327681, 0, 65531, 327681, 0, 65532, 327681, 0, 65533, 393217, 0, 65534, 327681, 0, 65535, 393217, 0, 0, 393217, 0, 1, 393217, 0, 2, 393217, 0, 3, 393217, 0, 4, 327681, 0, 5, 393217, 0, 6, 393217, 0, 7, 393217, 0, 8, 393217, 0, 9, 327681, 0, 10, 393217, 0, 11, 393217, 0, 12, 393217, 0, 13, 327681, 0, 14, 327681, 0, 65519, 327681, 0)
+
+[node name="Dudu" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 400.0
+offset_right = 880.0
+offset_bottom = 518.0
+texture = ExtResource("7_mtr6e")
+expand_mode = 1
+
+[node name="SpeechBubble" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(905.5, 461.5)
+scale = Vector2(6.56818, 6.5)
+texture = ExtResource("7_3ucsi")
+
+[node name="Joke" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 777.0
+offset_top = 417.0
+offset_right = 1064.0
+offset_bottom = 544.0
+scale = Vector2(0.9, 0.9)
+text = "Did you hear about the
+claustrophobic astronaut?
+He just needed a little space!"
+label_settings = SubResource("LabelSettings_2ocko")
+autowrap_mode = 2
+
+[connection signal="pressed" from="start button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="settings button" to="." method="_on_settings_button_pressed"]

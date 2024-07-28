@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl8xouoqtrx27"]
+[gd_scene load_steps=5 format=3 uid="uid://cl8xouoqtrx27"]
 
-[ext_resource type="Texture2D" uid="uid://nys78ifb214i" path="res://textures/references/Objects/Egg_item.png" id="1_wjm8e"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="2_gwf7r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1iu1n"]
-atlas = ExtResource("1_wjm8e")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m4lbr"]

@@ -12,7 +12,7 @@ func _process(_delta):
 	self.text += '\n'
 	self.text += var_to_str(get_parent().get_node("eduardo").tired)
 	self.text += '\n'
-	self.text += var_to_str(get_parent().get_node("item").pickedUp)
+	#self.text += var_to_str(get_parent().get_node("item").pickedUp)
 	#get_parent().get_node('Debug Label').text = var_to_str(get_parent().get_node("item").player_inside)
 	
 
