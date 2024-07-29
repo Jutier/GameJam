@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const CRAWL_SPEED = 50
+const CRAWL_SPEED = 100
 const WALK_SPEED = 150
 const STUN_DURATION = 120
 const MAX_STAMINA = 300
@@ -10,18 +10,17 @@ var tired = STUN_DURATION # for lack of a better name, this will have to suffice
 var direction = [0, 1] # it needs to be out here, it must not update every frame
 
 #var free = true # must be a way to see if the player is able to use actions (not tired, not holding, etc)
-# should be one for holding and one for wearing
  
 @onready var node_animation = get_node("animation")
 
 func _physics_process(_delta):
 	
-	var sprintPressed = Input.is_action_pressed("sprint")
+	var sprintPressed = false #Input.is_action_pressed("sprint")
 	var xy_input = get_input_xy()
 
 
+	# recovers stamina if not down or running
 	if stamina < MAX_STAMINA and not (sprintPressed or tired < STUN_DURATION):
-		# recovers stamina if not down or running
 		stamina += 1
 	
 	if xy_input != Vector2.ZERO and tired == STUN_DURATION:

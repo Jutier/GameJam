@@ -3,10 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://wys7vti0snxj" path="res://textures/player/sprite_piscando.png" id="2_ft2eo"]
 [ext_resource type="Script" path="res://scripts/eduardo.gd" id="2_urehj"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wljpn"]
-radius = 8.99902
-height = 19.9978
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bugli"]
 atlas = ExtResource("2_ft2eo")
 region = Rect2(0, 0, 514, 514)
@@ -225,17 +221,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_axwqu"]
+radius = 20.0
+
 [node name="eduardo" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("2_urehj")
-
-[node name="box" type="CollisionShape2D" parent="."]
-position = Vector2(-5.72205e-06, 1.43051e-06)
-rotation = -1.55606
-shape = SubResource("CapsuleShape2D_wljpn")
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_w38um")
 animation = &"idle_down"
 autoplay = "idle_down"
+
+[node name="box" type="CollisionShape2D" parent="."]
+position = Vector2(-1.13687e-13, 1.19209e-07)
+rotation = -1.55606
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_axwqu")

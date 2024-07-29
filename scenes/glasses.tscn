@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bepiquljbkhsy"]
+
+[ext_resource type="PackedScene" uid="uid://cl8xouoqtrx27" path="res://scenes/item.tscn" id="1_yrqm6"]
+[ext_resource type="Texture2D" uid="uid://bdsld845q8ovw" path="res://textures/light.png" id="2_xsk4r"]
+
+[node name="glasses" type="Node2D"]
+
+[node name="item" parent="." instance=ExtResource("1_yrqm6")]
+visible = false
+
+[node name="0" type="PointLight2D" parent="."]
+energy = 0.0
+shadow_enabled = true
+shadow_color = Color(0.252887, 0.536197, 0.873376, 0.934)
+shadow_filter_smooth = 1.5
+shadow_item_cull_mask = 585
+texture = ExtResource("2_xsk4r")
+
+[node name="1" type="PointLight2D" parent="."]
+energy = 0.0
+shadow_enabled = true
+shadow_color = Color(0.252888, 0.873376, 0.382579, 0.934)
+shadow_filter_smooth = 1.5
+shadow_item_cull_mask = 1170
+texture = ExtResource("2_xsk4r")
+
+[node name="2" type="PointLight2D" parent="."]
+energy = 0.0
+shadow_enabled = true
+shadow_color = Color(0.873376, 0.252888, 0.442098, 0.934)
+shadow_filter_smooth = 1.5
+shadow_item_cull_mask = 2340
+texture = ExtResource("2_xsk4r")

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0vhw8e23mm54"]
+[gd_scene load_steps=3 format=3 uid="uid://d0vhw8e23mm54"]
+
+[ext_resource type="Texture2D" uid="uid://cilg3w25oi5rf" path="res://textures/image.png" id="1_0naba"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8mxrw"]
 a = Vector2(0.000701904, -192)
@@ -25,3 +27,7 @@ position = Vector2(192, 0)
 shape = SubResource("SegmentShape2D_8mxrw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(-2.28882e-05, -3.8147e-06)
+scale = Vector2(3.09677, 2.37037)
+texture = ExtResource("1_0naba")

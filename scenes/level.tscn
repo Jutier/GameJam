@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://demxif3kvwjjj"]
+[gd_scene load_steps=6 format=3 uid="uid://demxif3kvwjjj"]
 
 [ext_resource type="Script" path="res://scripts/label.gd" id="1_tw07g"]
 [ext_resource type="PackedScene" uid="uid://kaqma0xsp7vj" path="res://scenes/eduardo.tscn" id="2_hs06d"]
 [ext_resource type="PackedScene" uid="uid://d0vhw8e23mm54" path="res://scenes/room.tscn" id="3_vvc8p"]
+[ext_resource type="PackedScene" uid="uid://ctviyig2bppo7" path="res://scenes/pieces.tscn" id="4_n67m6"]
+[ext_resource type="PackedScene" uid="uid://bepiquljbkhsy" path="res://scenes/glasses.tscn" id="5_7wmxx"]
 
 [node name="Level 1" type="Node2D"]
 y_sort_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.100724, 0.147091, 0.443191, 1)
 
 [node name="Debug Label" type="Label" parent="."]
 offset_left = -81.0
@@ -14,9 +20,34 @@ offset_right = -41.0
 offset_bottom = 50.0
 script = ExtResource("1_tw07g")
 
-[node name="eduardo" parent="." instance=ExtResource("2_hs06d")]
-y_sort_enabled = true
-position = Vector2(424, 328)
-
 [node name="room" parent="." instance=ExtResource("3_vvc8p")]
 position = Vector2(480, 270)
+
+[node name="eduardo" parent="." instance=ExtResource("2_hs06d")]
+y_sort_enabled = true
+position = Vector2(477, 349)
+
+[node name="piece (0, 1, 2, 1)" parent="." instance=ExtResource("4_n67m6")]
+position = Vector2(569, 185)
+metadata/_edit_group_ = true
+
+[node name="LightOccluder2D" parent="piece (0, 1, 2, 1)" index="1"]
+occluder_light_mask = 1297
+
+[node name="piece (0, 0, 0, 0)" parent="." instance=ExtResource("4_n67m6")]
+position = Vector2(402, 184)
+metadata/_edit_group_ = true
+
+[node name="glasses" parent="." instance=ExtResource("5_7wmxx")]
+position = Vector2(482, 186)
+metadata/_edit_group_ = true
+
+[node name="1" parent="glasses" index="2"]
+visible = false
+
+[node name="2" parent="glasses" index="3"]
+visible = false
+
+[editable path="piece (0, 1, 2, 1)"]
+[editable path="piece (0, 0, 0, 0)"]
+[editable path="glasses"]

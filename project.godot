@@ -43,6 +43,21 @@ use={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Strength: 0"
+2d_render/layer_2="Strength: 1"
+2d_render/layer_3="Strength: 2"
+2d_render/layer_4="Malleability: 0"
+2d_render/layer_5="Malleability: 1"
+2d_render/layer_6="Malleability: 2"
+2d_render/layer_7="Cost: 0"
+2d_render/layer_8="Cost: 1"
+2d_render/layer_9="Cost: 2"
+2d_render/layer_10="Mass: 0"
+2d_render/layer_11="Mass: 1"
+2d_render/layer_12="Mass: 0"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

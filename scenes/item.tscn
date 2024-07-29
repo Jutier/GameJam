@@ -1,26 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl8xouoqtrx27"]
+[gd_scene load_steps=3 format=3 uid="uid://cl8xouoqtrx27"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="2_gwf7r"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1iu1n"]
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_m4lbr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1iu1n")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_pxrdt"]
-radius = 8.0
+radius = 20.0
 
-[node name="item" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_m4lbr")
+[node name="item" type="Sprite2D"]
 script = ExtResource("2_gwf7r")
 
 [node name="interactionZone" type="Area2D" parent="."]
