@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctviyig2bppo7"]
+
+[ext_resource type="PackedScene" uid="uid://cl8xouoqtrx27" path="res://scenes/item.tscn" id="1_i12nx"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l14m8"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rk7tx"]
+polygon = PackedVector2Array(0, -20, -14.1, -14.1, -20, 0, -14.1, 14.1, 0, 20, 14.1, 14.1, 20, 0, 14.1, -14.1)
+
+[node name="pieces" type="Node2D"]
+
+[node name="item" parent="." instance=ExtResource("1_i12nx")]
+visible = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+light_mask = 0
+visibility_layer = 0
+material = SubResource("CanvasItemMaterial_l14m8")
+occluder = SubResource("OccluderPolygon2D_rk7tx")
+occluder_light_mask = 585
