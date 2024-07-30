@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/loading.gd" id="1_rb43r"]
 [ext_resource type="Texture2D" uid="uid://wys7vti0snxj" path="res://textures/player/sprite_piscando.png" id="2_2h8ju"]
-[ext_resource type="Texture2D" uid="uid://csw3uurcj4yt0" path="res://textures/Pixel Planet by Deep-Fold.png" id="2_oyoes"]
+[ext_resource type="Texture2D" uid="uid://csw3uurcj4yt0" path="res://textures/gui/Pixel Planet by Deep-Fold.png" id="2_oyoes"]
 
 [sub_resource type="Animation" id="Animation_7k7po"]
 resource_name = "Loading"

@@ -1,12 +1,13 @@
-extends Sprite2D
+extends Node2D
 
-#var nodeParent = get_parent()
+class_name item_class
+
+
 var player_inside = false
 var pickedUp = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#print(nodeParent)
 	pass # Replace with function body.
 
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcqlopfo0fdlc"
-path="res://.godot/imported/GUI by Mounir Tohami.png-c1406a4282e9cfb5d88ff033e5a0988a.ctex"
+uid="uid://djqofpovtop62"
+path="res://.godot/imported/speech bubble.png-055a146ffa218a06613d4c963169550c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/GUI by Mounir Tohami.png"
-dest_files=["res://.godot/imported/GUI by Mounir Tohami.png-c1406a4282e9cfb5d88ff033e5a0988a.ctex"]
+source_file="res://textures/gui/speech bubble.png"
+dest_files=["res://.godot/imported/speech bubble.png-055a146ffa218a06613d4c963169550c.ctex"]
 
 [params]
 

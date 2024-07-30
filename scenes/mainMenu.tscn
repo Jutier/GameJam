@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_01cj4"]
 [ext_resource type="Theme" uid="uid://chdltnsrcvssn" path="res://theme.tres" id="1_ev2k0"]
 [ext_resource type="AudioStream" uid="uid://j10gxgh3ospw" path="res://sounds/Music.wav" id="2_brl24"]
-[ext_resource type="Texture2D" uid="uid://nsrubn776nqn" path="res://textures/Scale by Mounir Tohami.png" id="5_7ev1c"]
-[ext_resource type="Texture2D" uid="uid://bxgwaf7vh3iej" path="res://textures/Moon by RusKom.png" id="5_yghfo"]
-[ext_resource type="Texture2D" uid="uid://djqofpovtop62" path="res://textures/speech bubble.png" id="7_3ucsi"]
+[ext_resource type="Texture2D" uid="uid://nsrubn776nqn" path="res://textures/gui/Scale by Mounir Tohami.png" id="5_7ev1c"]
+[ext_resource type="Texture2D" uid="uid://bxgwaf7vh3iej" path="res://textures/tilemaps/Moon by RusKom.png" id="5_yghfo"]
+[ext_resource type="Texture2D" uid="uid://djqofpovtop62" path="res://textures/gui/speech bubble.png" id="7_3ucsi"]
 [ext_resource type="Texture2D" uid="uid://235sxpysxshk" path="res://textures/player/HD Dudu.png" id="7_mtr6e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bjtd"]
@@ -98,14 +98,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_7ev1c")
 
-[node name="settings button" type="Button" parent="button box"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 87.0
-offset_right = 240.0
-offset_bottom = 135.0
-text = "Settings"
-
 [node name="start button" type="Button" parent="button box"]
 layout_mode = 0
 offset_left = 32.0
@@ -113,6 +105,14 @@ offset_top = 31.0
 offset_right = 240.0
 offset_bottom = 79.0
 text = "New Game"
+
+[node name="settings button" type="Button" parent="button box"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 87.0
+offset_right = 240.0
+offset_bottom = 135.0
+text = "Settings"
 
 [node name="credits button" type="Button" parent="button box"]
 layout_mode = 0
@@ -161,5 +161,5 @@ He just needed a little space!"
 label_settings = SubResource("LabelSettings_2ocko")
 autowrap_mode = 2
 
-[connection signal="pressed" from="button box/settings button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="button box/start button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="button box/settings button" to="." method="_on_settings_button_pressed"]

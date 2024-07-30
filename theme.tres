@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=8 format=3 uid="uid://chdltnsrcvssn"]
 
-[ext_resource type="Texture2D" uid="uid://bcqlopfo0fdlc" path="res://textures/GUI by Mounir Tohami.png" id="1_3i7rv"]
+[ext_resource type="Texture2D" uid="uid://bcqlopfo0fdlc" path="res://textures/gui/GUI by Mounir Tohami.png" id="1_3i7rv"]
 [ext_resource type="FontFile" uid="uid://bfqbsabrwdyw2" path="res://fonts/Jua-Regular.ttf" id="1_xylri"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ntl8m"]

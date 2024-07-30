@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cilg3w25oi5rf"
-path="res://.godot/imported/image.png-fafe54a950af780998d8adaeca26ad3f.ctex"
+uid="uid://csw3uurcj4yt0"
+path="res://.godot/imported/Pixel Planet by Deep-Fold.png-d45f75237189a86370296f594aec8995.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/image.png"
-dest_files=["res://.godot/imported/image.png-fafe54a950af780998d8adaeca26ad3f.ctex"]
+source_file="res://textures/gui/Pixel Planet by Deep-Fold.png"
+dest_files=["res://.godot/imported/Pixel Planet by Deep-Fold.png-d45f75237189a86370296f594aec8995.ctex"]
 
 [params]
 

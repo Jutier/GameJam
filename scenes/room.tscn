@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0vhw8e23mm54"]
 
-[ext_resource type="Texture2D" uid="uid://cilg3w25oi5rf" path="res://textures/image.png" id="1_0naba"]
+[ext_resource type="Texture2D" uid="uid://dobl2ri2ngmg3" path="res://textures/rooms/lab.png" id="1_pcwky"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8mxrw"]
-a = Vector2(0.000701904, -192)
-b = Vector2(-0.000701904, 192)
+a = Vector2(0.00125122, -344)
+b = Vector2(-0.00125122, 344)
 
 [node name="walls" type="StaticBody2D"]
 
 [node name="left wall" type="CollisionShape2D" parent="."]
-position = Vector2(-192, 0)
+position = Vector2(-344, 0)
 shape = SubResource("SegmentShape2D_8mxrw")
 
 [node name="bottom wall" type="CollisionShape2D" parent="."]
@@ -23,11 +23,18 @@ rotation = -1.5708
 shape = SubResource("SegmentShape2D_8mxrw")
 
 [node name="right wall" type="CollisionShape2D" parent="."]
-position = Vector2(192, 0)
+position = Vector2(344, 0)
 shape = SubResource("SegmentShape2D_8mxrw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(-2.28882e-05, -3.8147e-06)
-scale = Vector2(3.09677, 2.37037)
-texture = ExtResource("1_0naba")
+position = Vector2(4.76837e-07, 2.38419e-07)
+scale = Vector2(0.469976, 0.488337)
+texture = ExtResource("1_pcwky")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, 192, -16, 192, 0, 160, 16, 152, 144, 152, 160, 160, 168, 192)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(168, -128)
+polygon = PackedVector2Array(168, 320, 168, 104, 88, 80, 40, 72, 16, 64, 0, -24, -152, -24, -176, -24, -184, -80, 208, -80, 208, 320)
