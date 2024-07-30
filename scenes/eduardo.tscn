@@ -31,13 +31,13 @@ region = Rect2(1542, 1416, 514, 472)
 atlas = ExtResource("2_ft2eo")
 region = Rect2(0, 944, 514, 472)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4n0ma"]
-atlas = ExtResource("2_ft2eo")
-region = Rect2(514, 944, 514, 472)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ssohr"]
 atlas = ExtResource("2_ft2eo")
 region = Rect2(1028, 944, 514, 472)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n0ma"]
+atlas = ExtResource("2_ft2eo")
+region = Rect2(514, 944, 514, 472)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vf46p"]
 atlas = ExtResource("2_ft2eo")
@@ -132,10 +132,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_k6nmi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4n0ma")
+"texture": SubResource("AtlasTexture_ssohr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ssohr")
+"texture": SubResource("AtlasTexture_4n0ma")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vf46p")
@@ -222,17 +222,18 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_axwqu"]
-radius = 20.0
+radius = 32.0
 
 [node name="eduardo" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("2_urehj")
 
 [node name="animation" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_w38um")
-animation = &"idle_down"
+animation = &"crawl_left"
 autoplay = "idle_down"
+frame_progress = 0.222277
 
 [node name="box" type="CollisionShape2D" parent="."]
 position = Vector2(-1.13687e-13, 1.19209e-07)

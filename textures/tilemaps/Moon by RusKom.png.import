@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csw3uurcj4yt0"
-path="res://.godot/imported/Pixel Planet by Deep-Fold.png-21ccd55175872f8322674adf48d143af.ctex"
+uid="uid://bxgwaf7vh3iej"
+path="res://.godot/imported/Moon by RusKom.png-695a95552e2196854247612f00ac8910.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Pixel Planet by Deep-Fold.png"
-dest_files=["res://.godot/imported/Pixel Planet by Deep-Fold.png-21ccd55175872f8322674adf48d143af.ctex"]
+source_file="res://textures/tilemaps/Moon by RusKom.png"
+dest_files=["res://.godot/imported/Moon by RusKom.png-695a95552e2196854247612f00ac8910.ctex"]
 
 [params]
 

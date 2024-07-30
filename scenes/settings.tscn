@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://jsilom85dojv"]
+[gd_scene load_steps=4 format=3 uid="uid://dj7xw5i0qvrv0"]
 
-[ext_resource type="Texture2D" uid="uid://nsrubn776nqn" path="res://textures/Scale by Mounir Tohami.png" id="1_a88a1"]
+[ext_resource type="Texture2D" uid="uid://nsrubn776nqn" path="res://textures/gui/Scale by Mounir Tohami.png" id="1_a88a1"]
 [ext_resource type="Theme" uid="uid://chdltnsrcvssn" path="res://theme.tres" id="1_xglqn"]
 [ext_resource type="Script" path="res://scripts/settings.gd" id="2_8oft7"]
 
@@ -56,6 +56,7 @@ value = 100.0
 ticks_on_borders = true
 
 [node name="back button" type="Button" parent="Settings"]
+layout_mode = 0
 offset_left = 132.0
 offset_top = 281.0
 offset_right = 275.0
@@ -84,6 +85,7 @@ grow_vertical = 2
 texture = ExtResource("1_a88a1")
 
 [node name="to move" type="Label" parent="interact"]
+layout_mode = 0
 offset_left = 408.0
 offset_top = 208.0
 offset_right = 484.0
@@ -93,6 +95,7 @@ text = "to move
 "
 
 [node name="w" type="Label" parent="interact"]
+layout_mode = 0
 offset_left = 350.0
 offset_top = 192.0
 offset_right = 368.0
@@ -102,6 +105,7 @@ text = "W
 "
 
 [node name="a" type="Label" parent="interact"]
+layout_mode = 0
 offset_left = 328.0
 offset_top = 216.0
 offset_right = 344.0
@@ -111,6 +115,7 @@ text = "A
 "
 
 [node name="s" type="Label" parent="interact"]
+layout_mode = 0
 offset_left = 352.0
 offset_top = 216.0
 offset_right = 368.0
@@ -120,6 +125,7 @@ text = "S
 "
 
 [node name="d" type="Label" parent="interact"]
+layout_mode = 0
 offset_left = 376.0
 offset_top = 216.0
 offset_right = 392.0
@@ -150,6 +156,7 @@ grow_vertical = 2
 texture = ExtResource("1_a88a1")
 
 [node name="to interact" type="Label" parent="movement"]
+layout_mode = 0
 offset_left = 376.0
 offset_top = 208.0
 offset_right = 484.0
@@ -159,6 +166,7 @@ text = "to interact
 "
 
 [node name="f" type="Label" parent="movement"]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 208.0
 offset_right = 332.0

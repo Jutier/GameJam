@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nsrubn776nqn"
-path="res://.godot/imported/Scale by Mounir Tohami.png-d17d533c28e8b546d1c5121bbbea2712.ctex"
+path="res://.godot/imported/Scale by Mounir Tohami.png-9d8946635667f01a045566d9f6f2ff3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Scale by Mounir Tohami.png"
-dest_files=["res://.godot/imported/Scale by Mounir Tohami.png-d17d533c28e8b546d1c5121bbbea2712.ctex"]
+source_file="res://textures/gui/Scale by Mounir Tohami.png"
+dest_files=["res://.godot/imported/Scale by Mounir Tohami.png-9d8946635667f01a045566d9f6f2ff3f.ctex"]
 
 [params]
 
