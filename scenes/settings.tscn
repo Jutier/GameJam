@@ -1,0 +1,171 @@
+[gd_scene load_steps=4 format=3 uid="uid://jsilom85dojv"]
+
+[ext_resource type="Texture2D" uid="uid://nsrubn776nqn" path="res://textures/Scale by Mounir Tohami.png" id="1_a88a1"]
+[ext_resource type="Theme" uid="uid://chdltnsrcvssn" path="res://theme.tres" id="1_xglqn"]
+[ext_resource type="Script" path="res://scripts/settings.gd" id="2_8oft7"]
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xglqn")
+script = ExtResource("2_8oft7")
+
+[node name="Settings" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -183.0
+offset_right = 208.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_a88a1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 413.0
+offset_bottom = 339.0
+
+[node name="Label" type="Label" parent="Settings"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 53.0
+offset_right = 102.0
+offset_bottom = 76.0
+pivot_offset = Vector2(23, 12)
+text = "volume
+"
+
+[node name="HSlider" type="HSlider" parent="Settings"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 57.0
+offset_right = 379.0
+offset_bottom = 73.0
+value = 100.0
+ticks_on_borders = true
+
+[node name="back button" type="Button" parent="Settings"]
+offset_left = 132.0
+offset_top = 281.0
+offset_right = 275.0
+offset_bottom = 314.0
+text = "Back"
+
+[node name="interact" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Settings2" type="TextureRect" parent="interact"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_top = 164.0
+offset_right = 380.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_a88a1")
+
+[node name="to move" type="Label" parent="interact"]
+offset_left = 408.0
+offset_top = 208.0
+offset_right = 484.0
+offset_bottom = 231.0
+pivot_offset = Vector2(23, 12)
+text = "to move
+"
+
+[node name="w" type="Label" parent="interact"]
+offset_left = 350.0
+offset_top = 192.0
+offset_right = 368.0
+offset_bottom = 215.0
+pivot_offset = Vector2(23, 12)
+text = "W
+"
+
+[node name="a" type="Label" parent="interact"]
+offset_left = 328.0
+offset_top = 216.0
+offset_right = 344.0
+offset_bottom = 239.0
+pivot_offset = Vector2(23, 12)
+text = "A
+"
+
+[node name="s" type="Label" parent="interact"]
+offset_left = 352.0
+offset_top = 216.0
+offset_right = 368.0
+offset_bottom = 239.0
+pivot_offset = Vector2(23, 12)
+text = "S
+"
+
+[node name="d" type="Label" parent="interact"]
+offset_left = 376.0
+offset_top = 216.0
+offset_right = 392.0
+offset_bottom = 239.0
+pivot_offset = Vector2(23, 12)
+text = "D"
+
+[node name="movement" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 80.0
+offset_right = 72.0
+offset_bottom = 120.0
+
+[node name="Settings2" type="TextureRect" parent="movement"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 268.0
+offset_top = 164.0
+offset_right = 348.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_a88a1")
+
+[node name="to interact" type="Label" parent="movement"]
+offset_left = 376.0
+offset_top = 208.0
+offset_right = 484.0
+offset_bottom = 231.0
+pivot_offset = Vector2(23, 12)
+text = "to interact
+"
+
+[node name="f" type="Label" parent="movement"]
+offset_left = 320.0
+offset_top = 208.0
+offset_right = 332.0
+offset_bottom = 231.0
+pivot_offset = Vector2(23, 12)
+text = "F
+"
+
+[connection signal="value_changed" from="Settings/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Settings/back button" to="." method="_on_back_button_pressed"]

@@ -98,28 +98,28 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_7ev1c")
 
-[node name="start button" type="Button" parent="."]
+[node name="settings button" type="Button" parent="button box"]
 layout_mode = 0
-offset_left = 376.0
-offset_top = 158.0
-offset_right = 584.0
-offset_bottom = 206.0
-text = "New Game"
-
-[node name="settings button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 376.0
-offset_top = 214.0
-offset_right = 584.0
-offset_bottom = 262.0
+offset_left = 32.0
+offset_top = 87.0
+offset_right = 240.0
+offset_bottom = 135.0
 text = "Settings"
 
-[node name="credits button" type="Button" parent="."]
+[node name="start button" type="Button" parent="button box"]
 layout_mode = 0
-offset_left = 376.0
-offset_top = 270.0
-offset_right = 584.0
-offset_bottom = 318.0
+offset_left = 32.0
+offset_top = 31.0
+offset_right = 240.0
+offset_bottom = 79.0
+text = "New Game"
+
+[node name="credits button" type="Button" parent="button box"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 143.0
+offset_right = 240.0
+offset_bottom = 191.0
 text = "Credits
 "
 
@@ -161,5 +161,5 @@ He just needed a little space!"
 label_settings = SubResource("LabelSettings_2ocko")
 autowrap_mode = 2
 
-[connection signal="pressed" from="start button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="settings button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="button box/settings button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="button box/start button" to="." method="_on_start_button_pressed"]

@@ -237,5 +237,4 @@ autoplay = "idle_down"
 [node name="box" type="CollisionShape2D" parent="."]
 position = Vector2(-1.13687e-13, 1.19209e-07)
 rotation = -1.55606
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_axwqu")
