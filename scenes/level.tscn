@@ -1,117 +1,123 @@
 [gd_scene load_steps=12 format=3 uid="uid://demxif3kvwjjj"]
 
 [ext_resource type="AudioStream" uid="uid://j10gxgh3ospw" path="res://sounds/Music.wav" id="1_6d7ov"]
-[ext_resource type="Script" path="res://scripts/label.gd" id="1_tw07g"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_vdbeq"]
 [ext_resource type="PackedScene" uid="uid://kaqma0xsp7vj" path="res://scenes/eduardo.tscn" id="2_hs06d"]
 [ext_resource type="PackedScene" uid="uid://d0vhw8e23mm54" path="res://scenes/room.tscn" id="3_vvc8p"]
 [ext_resource type="PackedScene" uid="uid://ctviyig2bppo7" path="res://scenes/pieces.tscn" id="4_n67m6"]
 [ext_resource type="PackedScene" uid="uid://bepiquljbkhsy" path="res://scenes/glasses.tscn" id="5_7wmxx"]
-[ext_resource type="Texture2D" uid="uid://5pydfsyaxaby" path="res://textures/props/glasses 1.png" id="6_kqh61"]
+[ext_resource type="Texture2D" uid="uid://5pydfsyaxaby" path="res://textures/props/glasses/glasses 1.png" id="6_kqh61"]
 [ext_resource type="PackedScene" uid="uid://dj7xw5i0qvrv0" path="res://scenes/settings.tscn" id="6_teby4"]
-[ext_resource type="Texture2D" uid="uid://b1r6wirjbi50k" path="res://textures/props/glasses 2.png" id="7_yalth"]
-[ext_resource type="Texture2D" uid="uid://dpircuk0e6tu" path="res://textures/props/glasses 3.png" id="8_xk72s"]
-[ext_resource type="Texture2D" uid="uid://cf5i7axbv0oa6" path="res://textures/props/glasses 4.png" id="9_5i83l"]
+[ext_resource type="Texture2D" uid="uid://b1r6wirjbi50k" path="res://textures/props/glasses/glasses 2.png" id="7_yalth"]
+[ext_resource type="Texture2D" uid="uid://dpircuk0e6tu" path="res://textures/props/glasses/glasses 3.png" id="8_xk72s"]
+[ext_resource type="Texture2D" uid="uid://cf5i7axbv0oa6" path="res://textures/props/glasses/glasses 4.png" id="9_5i83l"]
 
 [node name="Level 1" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_vdbeq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_6d7ov")
 autoplay = true
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.231857, 0.290205, 0.533943, 1)
-
-[node name="Debug Label" type="Label" parent="."]
-offset_left = -81.0
-offset_top = 27.0
-offset_right = -41.0
-offset_bottom = 50.0
-script = ExtResource("1_tw07g")
-
 [node name="room" parent="." instance=ExtResource("3_vvc8p")]
 position = Vector2(401, 270)
+
+[node name="pieces" parent="." instance=ExtResource("4_n67m6")]
+position = Vector2(577, 383)
+strength = 1
+malleability = 1
+cost = 2
+mass = 1
+
+[node name="pieces2" parent="." instance=ExtResource("4_n67m6")]
+position = Vector2(368, 287)
+strength = 2
+malleability = 2
+cost = 1
+
+[node name="pieces3" parent="." instance=ExtResource("4_n67m6")]
+position = Vector2(362, 167)
+strength = 2
+malleability = 2
+cost = 2
+mass = 1
+
+[node name="pieces4" parent="." instance=ExtResource("4_n67m6")]
+position = Vector2(286, 228)
+strength = 2
+malleability = 1
+cost = 2
+mass = 2
+
+[node name="pieces5" parent="." instance=ExtResource("4_n67m6")]
+position = Vector2(263, 336)
+cost = 1
+mass = 2
+
+[node name="pieces6" parent="." instance=ExtResource("4_n67m6")]
+position = Vector2(252, 139)
+mass = 2
+
+[node name="pieces7" parent="." instance=ExtResource("4_n67m6")]
+position = Vector2(167, 238)
+strength = 1
+malleability = 1
+cost = 1
+mass = 2
+
+[node name="pieces8" parent="." instance=ExtResource("4_n67m6")]
+position = Vector2(392, 383)
+strength = 2
+malleability = 1
+
+[node name="pieces9" parent="." instance=ExtResource("4_n67m6")]
+position = Vector2(457, 227)
+strength = 1
+malleability = 2
+cost = 2
+mass = 2
+
+[node name="pieces10" parent="." instance=ExtResource("4_n67m6")]
+position = Vector2(478, 320)
+strength = 1
+cost = 1
+mass = 2
 
 [node name="eduardo" parent="." instance=ExtResource("2_hs06d")]
 y_sort_enabled = true
 position = Vector2(145, 382)
 
-[node name="piece (0, 1, 2, 1)" parent="." instance=ExtResource("4_n67m6")]
-position = Vector2(125, 136)
-metadata/_edit_group_ = true
-
-[node name="LightOccluder2D" parent="piece (0, 1, 2, 1)" index="1"]
-scale = Vector2(1.08546, 1)
-occluder_light_mask = 1297
-
-[node name="piece (0, 0, 0, 0)" parent="." instance=ExtResource("4_n67m6")]
-position = Vector2(248, 192)
-metadata/_edit_group_ = true
-
 [node name="strength glasses" parent="." instance=ExtResource("5_7wmxx")]
-position = Vector2(745, 288)
+position = Vector2(737, 255)
 metadata/_edit_group_ = true
 
 [node name="sprite" parent="strength glasses" index="0"]
 texture = ExtResource("6_kqh61")
 
-[node name="0" parent="strength glasses" index="1"]
-shadow_item_cull_mask = 1
-
-[node name="1" parent="strength glasses" index="2"]
-shadow_item_cull_mask = 2
-
-[node name="2" parent="strength glasses" index="3"]
-shadow_item_cull_mask = 4
-
 [node name="malleability glasses" parent="." instance=ExtResource("5_7wmxx")]
-position = Vector2(745, 366)
+position = Vector2(737, 320)
+gType = 1
 metadata/_edit_group_ = true
 
 [node name="sprite" parent="malleability glasses" index="0"]
 texture = ExtResource("7_yalth")
 
-[node name="0" parent="malleability glasses" index="1"]
-shadow_item_cull_mask = 8
-
-[node name="1" parent="malleability glasses" index="2"]
-shadow_item_cull_mask = 16
-
-[node name="2" parent="malleability glasses" index="3"]
-shadow_item_cull_mask = 32
-
 [node name="cost glasses" parent="." instance=ExtResource("5_7wmxx")]
-position = Vector2(745, 454)
+position = Vector2(737, 382)
+gType = 2
 metadata/_edit_group_ = true
 
 [node name="sprite" parent="cost glasses" index="0"]
 texture = ExtResource("8_xk72s")
 
-[node name="0" parent="cost glasses" index="1"]
-shadow_item_cull_mask = 64
-
-[node name="1" parent="cost glasses" index="2"]
-shadow_item_cull_mask = 128
-
-[node name="2" parent="cost glasses" index="3"]
-shadow_item_cull_mask = 256
-
 [node name="mass glasses" parent="." instance=ExtResource("5_7wmxx")]
-position = Vector2(459, 110)
+position = Vector2(737, 444)
+gType = 3
 metadata/_edit_group_ = true
 
 [node name="sprite" parent="mass glasses" index="0"]
 texture = ExtResource("9_5i83l")
-
-[node name="0" parent="mass glasses" index="1"]
-shadow_item_cull_mask = 512
-
-[node name="1" parent="mass glasses" index="2"]
-shadow_item_cull_mask = 1024
-
-[node name="2" parent="mass glasses" index="3"]
-shadow_item_cull_mask = 2048
 
 [node name="settingsLayer" type="CanvasLayer" parent="."]
 
@@ -119,8 +125,6 @@ shadow_item_cull_mask = 2048
 visible = false
 offset_right = 6.10352e-05
 
-[editable path="piece (0, 1, 2, 1)"]
-[editable path="piece (0, 0, 0, 0)"]
 [editable path="strength glasses"]
 [editable path="malleability glasses"]
 [editable path="cost glasses"]

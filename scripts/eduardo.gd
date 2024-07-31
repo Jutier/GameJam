@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const CRAWL_SPEED = 150
+const CRAWL_SPEED = 300
 const WALK_SPEED = 150
 const STUN_DURATION = 120
 const MAX_STAMINA = 300
@@ -23,9 +23,6 @@ func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("use"):
 		interact()
-		
-	if Input.is_action_just_pressed("pause"):
-		$"../settingsLayer/settingsMenu".visible = true
 
 	# recovers stamina if not down or running
 	if stamina < MAX_STAMINA and not (sprintPressed or tired < STUN_DURATION):
@@ -101,11 +98,15 @@ func animate(speed_abs):
 
 func interact():
 	if holding:
+		SignalManager.emit_signal("glasses_off_signal")
 		holding.dropDown()
 		holding = false
 	elif in_range:
 		holding = in_range.pop_back()
 		holding.pickUp(self)
+		if holding.has_method("oculus"):
+			SignalManager.emit_signal("glasses_on_signal", holding.gType)
+			
 		
 
 func dead():

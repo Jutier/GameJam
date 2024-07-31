@@ -1,54 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://bepiquljbkhsy"]
+[gd_scene load_steps=4 format=3 uid="uid://bepiquljbkhsy"]
 
 [ext_resource type="Script" path="res://scripts/glasses.gd" id="1_c0jvj"]
-[ext_resource type="Texture2D" uid="uid://bpx4wq3chytfe" path="res://textures/props/light.png" id="4_q6f70"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_75g3u"]
 load_path = "res://.godot/imported/glasses 1.png-57b6b04046577d04ccd23bf44d34ccb3.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tp8tb"]
-radius = 40.0
+radius = 32.0
 
 [node name="glasses" type="Node2D"]
 script = ExtResource("1_c0jvj")
 
 [node name="sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.08, 0.08)
+position = Vector2(9.53674e-07, -1.43051e-06)
+scale = Vector2(0.05, 0.05)
 texture = SubResource("CompressedTexture2D_75g3u")
-
-[node name="0" type="PointLight2D" parent="."]
-scale = Vector2(0.25, 0.25)
-energy = 0.0
-shadow_enabled = true
-shadow_color = Color(0.25098, 0.537255, 0.87451, 0.709804)
-shadow_filter_smooth = 1.5
-shadow_item_cull_mask = 585
-texture = ExtResource("4_q6f70")
-
-[node name="1" type="PointLight2D" parent="."]
-scale = Vector2(0.25, 0.25)
-energy = 0.0
-shadow_enabled = true
-shadow_color = Color(0.25098, 0.87451, 0.384314, 0.709804)
-shadow_filter_smooth = 1.5
-shadow_item_cull_mask = 1170
-texture = ExtResource("4_q6f70")
-
-[node name="2" type="PointLight2D" parent="."]
-position = Vector2(-1, 0)
-scale = Vector2(0.25, 0.25)
-energy = 0.0
-shadow_enabled = true
-shadow_color = Color(0.87451, 0.25098, 0.443137, 0.709804)
-shadow_filter_smooth = 1.5
-shadow_item_cull_mask = 2340
-texture = ExtResource("4_q6f70")
 
 [node name="pickup area" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="pickup shape" type="CollisionShape2D" parent="pickup area"]
-position = Vector2(8, 0)
+position = Vector2(5, 0)
 shape = SubResource("CircleShape2D_tp8tb")
 
 [connection signal="body_entered" from="pickup area" to="." method="_on_interaction_zone_body_entered"]

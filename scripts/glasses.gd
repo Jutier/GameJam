@@ -1,5 +1,6 @@
 extends Node2D
 
+@export_enum('strength', 'malleability', 'cost', 'mass') var gType: int
 
 var player_inside = false
 var pickedUp = false
@@ -26,9 +27,12 @@ func _on_interaction_zone_body_exited(body):
 func pickUp(body):
 	pickedUp = body
 	self.position = viewrect.end - Vector2(70, 70)
-	self.scale = Vector2(0.7, 0.7)
+	self.scale = Vector2(0.8, 0.8)
 
 func dropDown():
 	self.position = pickedUp.position
 	self.scale = Vector2(1, 1)
 	pickedUp = false
+	
+func oculus():
+	pass

@@ -1,31 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctviyig2bppo7"]
+[gd_scene load_steps=4 format=3 uid="uid://ctviyig2bppo7"]
 
 [ext_resource type="Script" path="res://scripts/pieces.gd" id="1_7b7st"]
-[ext_resource type="Texture2D" uid="uid://ct4ric0x3i4tp" path="res://icon.svg" id="2_1od37"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l14m8"]
-blend_mode = 1
-light_mode = 1
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rk7tx"]
-polygon = PackedVector2Array(0, -20, -14.1, -14.1, -20, 0, -14.1, 14.1, 0, 20, 14.1, 14.1, 20, 0, 14.1, -14.1)
+[ext_resource type="Texture2D" uid="uid://bjqigpt3cd6xa" path="res://textures/props/parts/part 1.png" id="2_mbnv5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qojmw"]
-radius = 40.0
+radius = 25.0
 
 [node name="pieces" type="Node2D"]
 script = ExtResource("1_7b7st")
 
 [node name="sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_1od37")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-light_mask = 0
-visibility_layer = 0
-material = SubResource("CanvasItemMaterial_l14m8")
-occluder = SubResource("OccluderPolygon2D_rk7tx")
-occluder_light_mask = 585
+position = Vector2(0, -1.89202)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_mbnv5")
 
 [node name="pickup area" type="Area2D" parent="."]
 collision_mask = 2
