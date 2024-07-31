@@ -23,6 +23,9 @@ func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("use"):
 		interact()
+		
+	if Input.is_action_just_pressed("pause"):
+		$"../settingsLayer/settingsMenu".visible = true
 
 	# recovers stamina if not down or running
 	if stamina < MAX_STAMINA and not (sprintPressed or tired < STUN_DURATION):
@@ -100,7 +103,7 @@ func interact():
 	if holding:
 		holding.dropDown()
 		holding = false
-	else:
+	elif in_range:
 		holding = in_range.pop_back()
 		holding.pickUp(self)
 		

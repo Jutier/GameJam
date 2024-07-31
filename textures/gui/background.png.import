@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxgwaf7vh3iej"
-path="res://.godot/imported/Moon by RusKom.png-695a95552e2196854247612f00ac8910.ctex"
+uid="uid://ce05aqgo2vwk2"
+path="res://.godot/imported/background.png-b65a1f20fc7f70c3b8283751fa227b61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tilemaps/Moon by RusKom.png"
-dest_files=["res://.godot/imported/Moon by RusKom.png-695a95552e2196854247612f00ac8910.ctex"]
+source_file="res://textures/gui/background.png"
+dest_files=["res://.godot/imported/background.png-b65a1f20fc7f70c3b8283751fa227b61.ctex"]
 
 [params]
 
