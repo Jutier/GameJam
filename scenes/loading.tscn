@@ -508,7 +508,6 @@ autoplay = "rotation"
 
 [node name="Dudu" type="AnimatedSprite2D" parent="Container"]
 position = Vector2(480, 270)
-rotation = 4.5129
 scale = Vector2(0.235904, 0.211358)
 sprite_frames = SubResource("SpriteFrames_mat4h")
 animation = &"crawl_left"

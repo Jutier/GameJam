@@ -1,8 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://bepiquljbkhsy"]
 
 [ext_resource type="Script" path="res://scripts/glasses.gd" id="1_c0jvj"]
-[ext_resource type="Texture2D" uid="uid://b83rwmjwh8ikc" path="res://textures/props/glasses.png" id="2_ncc48"]
 [ext_resource type="Texture2D" uid="uid://bpx4wq3chytfe" path="res://textures/props/light.png" id="4_q6f70"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_75g3u"]
+load_path = "res://.godot/imported/glasses 1.png-57b6b04046577d04ccd23bf44d34ccb3.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tp8tb"]
 radius = 40.0
@@ -11,8 +13,8 @@ radius = 40.0
 script = ExtResource("1_c0jvj")
 
 [node name="sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_ncc48")
+scale = Vector2(0.08, 0.08)
+texture = SubResource("CompressedTexture2D_75g3u")
 
 [node name="0" type="PointLight2D" parent="."]
 scale = Vector2(0.25, 0.25)

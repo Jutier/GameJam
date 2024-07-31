@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj7xw5i0qvrv0"]
+[gd_scene load_steps=8 format=3 uid="uid://dj7xw5i0qvrv0"]
 
-[ext_resource type="Texture2D" uid="uid://nsrubn776nqn" path="res://textures/gui/Scale by Mounir Tohami.png" id="1_a88a1"]
 [ext_resource type="Theme" uid="uid://chdltnsrcvssn" path="res://theme.tres" id="1_xglqn"]
 [ext_resource type="Script" path="res://scripts/settings.gd" id="2_8oft7"]
+[ext_resource type="Texture2D" uid="uid://bcqlopfo0fdlc" path="res://textures/gui/GUI by Mounir Tohami.png" id="3_cj5x4"]
+[ext_resource type="Shader" path="res://textures/gui/blur.gdshader" id="3_tgu8m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dat8l"]
+shader = ExtResource("3_tgu8m")
+shader_parameter/amount = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdd8t"]
+atlas = ExtResource("3_cj5x4")
+region = Rect2(0, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xtxo"]
+atlas = ExtResource("3_cj5x4")
+region = Rect2(49, 97, 30, 30)
 
 [node name="settings" type="Control"]
 layout_mode = 3
@@ -14,166 +27,168 @@ grow_vertical = 2
 theme = ExtResource("1_xglqn")
 script = ExtResource("2_8oft7")
 
-[node name="Settings" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_dat8l")
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 540.0
+
+[node name="board" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -204.0
-offset_top = -183.0
-offset_right = 208.0
-offset_bottom = 156.0
+offset_left = -274.0
+offset_top = -193.0
+offset_right = 274.0
+offset_bottom = 193.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_a88a1")
+texture = SubResource("AtlasTexture_jdd8t")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = -1.0
-offset_right = 413.0
-offset_bottom = 339.0
-
-[node name="Label" type="Label" parent="Settings"]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 53.0
-offset_right = 102.0
-offset_bottom = 76.0
+[node name="volume" type="Label" parent="board"]
+layout_mode = 2
+offset_left = 74.0
+offset_top = 75.0
+offset_right = 140.0
+offset_bottom = 99.0
 pivot_offset = Vector2(23, 12)
-text = "volume
+text = "Volume
 "
 
-[node name="HSlider" type="HSlider" parent="Settings"]
-layout_mode = 0
-offset_left = 106.0
-offset_top = 57.0
-offset_right = 379.0
-offset_bottom = 73.0
-value = 100.0
+[node name="volume slider" type="HSlider" parent="board"]
+layout_mode = 2
+offset_left = 162.0
+offset_top = 75.0
+offset_right = 461.0
+offset_bottom = 99.0
+max_value = 1.0
+step = 0.1
+value = 1.0
 ticks_on_borders = true
 
-[node name="back button" type="Button" parent="Settings"]
-layout_mode = 0
-offset_left = 132.0
-offset_top = 281.0
-offset_right = 275.0
-offset_bottom = 314.0
-text = "Back"
-
-[node name="interact" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Settings2" type="TextureRect" parent="interact"]
+[node name="box movement" type="TextureRect" parent="board"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 300.0
-offset_top = 164.0
-offset_right = 380.0
-offset_bottom = 230.0
+offset_left = -144.0
+offset_top = -62.0
+offset_right = -44.0
+offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_a88a1")
+texture = SubResource("AtlasTexture_3xtxo")
 
-[node name="to move" type="Label" parent="interact"]
+[node name="w" type="Label" parent="board"]
+modulate = Color(0.259257, 0.271971, 0.29634, 1)
 layout_mode = 0
-offset_left = 408.0
-offset_top = 208.0
-offset_right = 484.0
-offset_bottom = 231.0
-pivot_offset = Vector2(23, 12)
-text = "to move
-"
-
-[node name="w" type="Label" parent="interact"]
-layout_mode = 0
-offset_left = 350.0
-offset_top = 192.0
-offset_right = 368.0
-offset_bottom = 215.0
+offset_left = 170.0
+offset_top = 155.0
+offset_right = 188.0
+offset_bottom = 178.0
 pivot_offset = Vector2(23, 12)
 text = "W
 "
 
-[node name="a" type="Label" parent="interact"]
+[node name="a" type="Label" parent="board"]
+modulate = Color(0.259257, 0.271971, 0.29634, 1)
 layout_mode = 0
-offset_left = 328.0
-offset_top = 216.0
-offset_right = 344.0
-offset_bottom = 239.0
+offset_left = 151.0
+offset_top = 178.0
+offset_right = 166.0
+offset_bottom = 201.0
 pivot_offset = Vector2(23, 12)
 text = "A
 "
 
-[node name="s" type="Label" parent="interact"]
+[node name="s" type="Label" parent="board"]
+modulate = Color(0.259257, 0.271971, 0.29634, 1)
 layout_mode = 0
-offset_left = 352.0
-offset_top = 216.0
-offset_right = 368.0
-offset_bottom = 239.0
+offset_left = 173.0
+offset_top = 178.0
+offset_right = 186.0
+offset_bottom = 201.0
 pivot_offset = Vector2(23, 12)
-text = "S
+text = "S"
+
+[node name="d" type="Label" parent="board"]
+modulate = Color(0.259257, 0.271971, 0.29634, 1)
+layout_mode = 0
+offset_left = 194.0
+offset_top = 178.0
+offset_right = 207.0
+offset_bottom = 201.0
+pivot_offset = Vector2(23, 12)
+text = "D
 "
 
-[node name="d" type="Label" parent="interact"]
+[node name="to move" type="Label" parent="board"]
 layout_mode = 0
-offset_left = 376.0
-offset_top = 216.0
-offset_right = 392.0
-offset_bottom = 239.0
+offset_left = 138.0
+offset_top = 243.0
+offset_right = 214.0
+offset_bottom = 266.0
 pivot_offset = Vector2(23, 12)
-text = "D"
+text = "to move
+"
 
-[node name="movement" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 32.0
-offset_top = 80.0
-offset_right = 72.0
-offset_bottom = 120.0
-
-[node name="Settings2" type="TextureRect" parent="movement"]
+[node name="box interact" type="TextureRect" parent="board"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 268.0
-offset_top = 164.0
-offset_right = 348.0
-offset_bottom = 230.0
+offset_left = 48.0
+offset_top = -62.0
+offset_right = 148.0
+offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_a88a1")
+texture = SubResource("AtlasTexture_3xtxo")
 
-[node name="to interact" type="Label" parent="movement"]
+[node name="f" type="Label" parent="board"]
+modulate = Color(0.259257, 0.271971, 0.29634, 1)
 layout_mode = 0
-offset_left = 376.0
-offset_top = 208.0
-offset_right = 484.0
-offset_bottom = 231.0
-pivot_offset = Vector2(23, 12)
-text = "to interact
-"
-
-[node name="f" type="Label" parent="movement"]
-layout_mode = 0
-offset_left = 320.0
-offset_top = 208.0
-offset_right = 332.0
-offset_bottom = 231.0
+offset_left = 365.0
+offset_top = 170.0
+offset_right = 383.0
+offset_bottom = 193.0
 pivot_offset = Vector2(23, 12)
 text = "F
 "
 
-[connection signal="value_changed" from="Settings/HSlider" to="." method="_on_h_slider_value_changed"]
-[connection signal="pressed" from="Settings/back button" to="." method="_on_back_button_pressed"]
+[node name="to interact" type="Label" parent="board"]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 243.0
+offset_right = 430.0
+offset_bottom = 266.0
+pivot_offset = Vector2(23, 12)
+text = "to interact
+"
+
+[node name="back button" type="Button" parent="board"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 283.0
+offset_right = 241.0
+offset_bottom = 316.0
+text = "Back"
+
+[node name="menu button" type="Button" parent="board"]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 283.0
+offset_right = 449.0
+offset_bottom = 316.0
+text = "Main Menu"
+
+[connection signal="value_changed" from="board/volume slider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="board/back button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="board/menu button" to="." method="_on_menu_button_pressed"]
