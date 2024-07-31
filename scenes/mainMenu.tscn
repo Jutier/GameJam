@@ -152,6 +152,14 @@ offset_right = 253.0
 offset_bottom = 435.0
 text = "Back"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 499.0
+offset_right = 448.0
+offset_bottom = 522.0
+text = "\\/ Please read below how to play \\/"
+
 [connection signal="pressed" from="button box/start button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="button box/settings button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="button box/credits button" to="." method="_on_credits_button_pressed"]
