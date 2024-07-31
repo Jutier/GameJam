@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dj7xw5i0qvrv0"]
+[gd_scene load_steps=9 format=3 uid="uid://dj7xw5i0qvrv0"]
 
 [ext_resource type="Theme" uid="uid://chdltnsrcvssn" path="res://theme.tres" id="1_xglqn"]
 [ext_resource type="Script" path="res://scripts/settings.gd" id="2_8oft7"]
 [ext_resource type="Texture2D" uid="uid://bcqlopfo0fdlc" path="res://textures/gui/GUI by Mounir Tohami.png" id="3_cj5x4"]
 [ext_resource type="Shader" path="res://textures/gui/blur.gdshader" id="3_tgu8m"]
+[ext_resource type="Script" path="res://scripts/volume slider.gd" id="5_5imrm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dat8l"]
 shader = ExtResource("3_tgu8m")
@@ -65,9 +66,11 @@ offset_top = 75.0
 offset_right = 461.0
 offset_bottom = 99.0
 max_value = 1.0
-step = 0.1
+step = 0.001
 value = 1.0
 ticks_on_borders = true
+script = ExtResource("5_5imrm")
+bus_name = "Master"
 
 [node name="box movement" type="TextureRect" parent="board"]
 layout_mode = 1
@@ -189,6 +192,8 @@ offset_right = 449.0
 offset_bottom = 316.0
 text = "Main Menu"
 
+[connection signal="changed" from="board/volume slider" to="." method="_on_volume_slider_changed"]
+[connection signal="changed" from="board/volume slider" to="board/volume slider" method="_on_changed"]
 [connection signal="value_changed" from="board/volume slider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="board/back button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="board/menu button" to="." method="_on_menu_button_pressed"]

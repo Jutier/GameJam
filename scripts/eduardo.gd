@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const CRAWL_SPEED = 100
+const CRAWL_SPEED = 150
 const WALK_SPEED = 150
 const STUN_DURATION = 120
 const MAX_STAMINA = 300
